@@ -1,175 +1,242 @@
-.container-fluid.main{
-  position: relative; /* To make the navbar positions relative to this container */
-  padding: 0;
-}
+$fonts: Arial, "Hiragino Kaku Gothic Pro W3", Meiryo, sans-serif;
+$bg_color: #2d3042;
+$font_color: #efefef;
+$link_color: #efefef;
+$link_hover_color: #fff;
 
-.navbar-default {
-  background-image: none;
-  background-color: transparent; /* Make the menu become transparent */
-  border-radius: 0px;
-  border: 0;
-  box-shadow: none;
-  padding: 10px;
-  position: absolute; /* Make the menu out of the document flow so it can placed anywhere without disturbing other widgets */
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: $fonts;
+  background-color: $bg_color;
+  position: relative;
+  color: $font_color;
+  text-align: center;
+  a, a:visited {
+    color: $link_color;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $link_hover_color;
+  }
+}
+%bv_hidden {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+%filled_obj {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 10; /* If you delete this line, your menu link won't be clicked because it is behind the background. Applying this code bring the menu in front of the background */
+  width: 100%;
+  height: 100%;
 }
 
-.navbar-default .navbar-brand {
-  font-family: Verdana;
-  color: #ffffff;
-  font-size: 20px;
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #ffffff;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-}
-
-.navbar-default .navbar-toggle:hover {
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle:focus {
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-
-.carousel .background {
-  background-position: center center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 700px;
-}
-
-@media (max-width:991px) {
-  .carousel .background {
-    background-size: cover; /* To make the background image looks good */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0 5%;
+  text-align: left;
+  z-index: 1;
+  h1 {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 18px;
+  }
+  nav {
+    display: inline-block;
+    float: right;
+    ul {
+      li {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 13px;
+        a {
+          display: block;
+          padding: 24px 15px;
+          &:hover {
+            background-color: rgba(#fff, .18);
+          }
+        }
+      }
+    }
   }
 }
 
-.carousel .background.a {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/92090/pexels-photo-92090-large.jpeg");
-}
-
-.carousel .background.b {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/93750/pexels-photo-93750-large.jpeg");
-}
-
-.carousel .background.c {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/76827/bahia-ocean-bay-boat-76827-large.jpeg");
-}
-
-.carousel-fade .carousel-inner .item {
+.main-slider {
+  position: relative;
+  width: 100%;
+  height: 38vw;
+  min-height: 8vw;
+  margin-bottom: 50px;
   opacity: 0;
-  transition: opacity 0.5s; /* The 0.5s describes the duration to make the opacity from 0 to 1 */
-}
-
-.carousel-fade .carousel-inner .active {
-  opacity: 1;
-}
-
-/* CSS Hack to trigger GPU for smooth transition */
-@media all and (transform-3d),
-(-webkit-transform-3d) {
-  .carousel-fade .carousel-inner > .item.next,
-  .carousel-fade .carousel-inner > .item.active.right {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  .carousel-fade .carousel-inner > .item.prev,
-  .carousel-fade .carousel-inner > .item.active.left {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  .carousel-fade .carousel-inner > .item.next.left,
-  .carousel-fade .carousel-inner > .item.prev.right,
-  .carousel-fade .carousel-inner > .item.active {
+  visibility: hidden;
+  transition:all 1.2s ease;
+  &.slick-initialized {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    visibility: visible;
   }
 }
-/* CSS Hack to trigger GPU for smooth transition */
-
-.covertext {
-  position: absolute; /* To make the div to be place anywhere. It is out of the document flow */
-  top: 200px; /* The distance between the div with the top of document */
-  left: 0px; /* Make the div full width */
-  right: 0px; /* Make the div full width */
+.slick-slide {
+  position: relative;
+  height: 38vw;
+  @extend %bv_hidden;
+  &::before {
+    @extend %filled_obj;
+    @extend %bv_hidden;
+    background-color: #000;
+    opacity: .3;
+    z-index: 1;
+  }
+  video {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform:translate(-50%, -50%);
+  }
+  iframe {
+    position: relative;
+    pointer-events: none;
+  }
+  figure {
+    position: relative;
+    height: 100%;
+  }
+  .slide-image {
+    opacity: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    // background-color:rgba(#c46897,.38);
+    // background-blend-mode:overlay;
+    transition:all .8s ease;
+    &.show {
+      opacity: 1;
+    }
+  }
+  .image-entity {
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .loading {
+    position: absolute;
+    top: 44%;
+    left: 0;
+    width: 100%;
+  }
+  .slide-media {
+    animation:slideOut .4s cubic-bezier(0.4, 0.29, 0.01, 1);
+  }
+  &.slick-active {
+    z-index: 1;
+    .slide-media {
+      animation:slideIn 2.4s cubic-bezier(0.4, 0.29, 0.01, 1);
+    }
+    .caption {
+      opacity: 1;
+      transform:translateY(0);
+      transition:all .7s cubic-bezier(0.32, 0.34, 0, 1.62) .6s;
+    }
+  }
 }
-
-.title {
-  font-family: Verdana;
-  font-weight: 600;
-  font-size: 60px;
-  color: #ffffff;
+.caption {
+  position: absolute;
+  top: 44%;
+  left: 5%;
   text-align: center;
+  padding: 20px;
+  border: 3px solid;
+  color: #fff;
+  margin: 0;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: .02em;
+  opacity: 0;
+  z-index: 1;
+  transition:all .3s ease;
+  transform:translateY(100px);
+  @extend %bv_hidden;
 }
 
-.subtitle {
-  font-family: Verdana;
-  font-size: 23px;
-  color: #ffffff;
+.slick-dots {
   text-align: center;
+  padding-top: 15px;
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 8px;
+    button {
+      width: 16px;
+      height: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 0 transparent;
+      vertical-align: middle;
+      color: #fff;
+      background-color: #fff;
+      transition:all .3s ease;
+      opacity: .4;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &.slick-active {
+      button {
+        border-color: $bg_color;
+        box-shadow: 0 0 0 2px #fff;
+        opacity: 1;
+      }
+    }
+  }
 }
 
-.explore {
-  text-align: center;
-  margin-top: 10px;
+.container {
+  background-color: #f2f2f2;
+  color: #444;
+  line-height: 1.6;
+  padding: 40px 0;
+  .content {
+    width: 90%;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  p {
+    margin-bottom: 40px;
+  }
 }
 
-.explore .btn-lg,
-.explore .btn-lg:hover {
-  border-radius: 30px;
-  padding: 15px 25px;
-  font-size: 22px;
-  background-image: none;
-  background-color: #FF4000;
-  border-color: #FF4000;
-  color: #ffffff;
+@keyframes slideIn {
+  from {
+    filter:blur(15px);
+  }
+  to {
+    filter:blur(0);
+  }
 }
-
-.btn,
-.btn:hover {
-  border-radius: 0px;
-  background-image: none;
-  background-color: #FF4000;
-  border-color: #FF4000;
-  color: #ffffff;
-  margin-bottom: 20px;
-  box-shadow: none;
-  outline: none;
-}
-
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-  color: #ffffff;
-  outline: none;
+@keyframes slideOut {
+  from {
+    filter:blur(0);
+  }
+  to {
+    filter:blur(15px);
+  }
 }
