@@ -1,234 +1,59 @@
-<div class="container-fluid main">
-
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span> 
-        </button>
-        <a class="navbar-brand" href="#">Website</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
+<header>
+  <h1>SITE TITLE</h1>
+  <nav>
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">SERVICES</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
   </nav>
-
-  <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
-    <div class="carousel-inner" role="listbox">
-      <div class="item active background a"></div>
-      <div class="item background b"></div>
-      <div class="item background c"></div>
-    </div>
+</header>
+<section class="main-slider">
+  <div class="item image">
+    <span class="loading">Loading...</span>
+    <figure>
+      <div class="slide-image slide-media" style="background-image:url('https://images.unsplash.com/photo-1617339847756-976edbc411e7?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzA4MTE4Mg&ixlib=rb-1.2.1&q=85');">
+        <img data-lazy="https://images.unsplash.com/photo-1617339847756-976edbc411e7?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzA4MTE4Mg&ixlib=rb-1.2.1&q=85" class="image-entity" />
+      </div>
+      <figcaption class="caption">Static Image</figcaption>
+    </figure>
   </div>
-  
-  <div class="covertext">
-    <div class="col-lg-10" style="float:none; margin:0 auto;">
-      <h1 class="title">ELINE</h1>
-      <h3 class="subtitle">A Tidy, Clean, Easy-to-Use, and Responsive Landing Page Template</h3>
-    </div>
-    <div class="col-xs-12 explore">
-      <a href="#"><button type="button" class="btn btn-lg explorebtn">EXPLORE</button></a>
-    </div>
+  <div class="item vimeo" data-video-start="4">
+    <iframe class="embed-player slide-media" src="https://player.vimeo.com/video/217885864?api=1&byline=0&portrait=0&title=0&background=1&mute=1&loop=1&autoplay=0&id=217885864" width="980" height="520" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <p class="caption">Vimeo</p>
   </div>
-  
-</div>
+  <div class="item image">
+    <figure>
+      <div class="slide-image slide-media" style="background-image:url('https://images.unsplash.com/photo-1485178575877-1a13bf489dfe?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzA4MTIwOQ&ixlib=rb-1.2.1&q=85');">
+        <img data-lazy="https://images.unsplash.com/photo-1485178575877-1a13bf489dfe?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzA4MTIwOQ&ixlib=rb-1.2.1&q=85" class="image-entity" />
+      </div>
+      <figcaption class="caption">Static Image</figcaption>
+    </figure>
+  </div>
+  <div class="item youtube">
+    <iframe class="embed-player slide-media" width="980" height="520" src="https://www.youtube.com/embed/QV5EXOFcdrQ?enablejsapi=1&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=QV5EXOFcdrQ&start=1" frameborder="0" allowfullscreen></iframe> 
+    <p class="caption">YouTube</p>
+  </div>
+  <div class="item image">
+    <figure>
+      <div class="slide-image slide-media" style="background-image:url('https://images.unsplash.com/photo-1483555714914-20a74b6e45f5?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzA4MTIwOQ&ixlib=rb-1.2.1&q=85');">
+        <img data-lazy="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLSlBkWDBsWXJNazQ" class="image-entity" />
+      </div>
+      <figcaption class="caption">Static Image</figcaption>
+    </figure>
+  </div>
+  <div class="item video">
+    <video class="slide-video slide-media" loop muted preload="metadata" poster="https://images.unsplash.com/photo-1483555714914-20a74b6e45f5?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzA4MTIwOQ&ixlib=rb-1.2.1&q=85">
+      <source src="https://player.vimeo.com/external/138504815.sd.mp4?s=8a71ff38f08ec81efe50d35915afd426765a7526&profile_id=112" type="video/mp4" />
+    </video>
+    <p class="caption">HTML 5 Video</p>
+  </div>
+</section>
+<section class="container">
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veniam quisquam, rem illum dicta cumque, voluptate fugiat impedit beatae rerum ratione, voluptates nisi magni delectus ab, eaque atque iste. Molestias incidunt nemo veniam alias nam nisi distinctio optio error architecto odit! Illo dicta nulla fugiat distinctio laudantium, corrupti eum unde.</p>
 
-
-
-<style>
-
-.container-fluid.main{
-  position: relative; /* To make the navbar positions relative to this container */
-  padding: 0;
-}
-
-.navbar-default {
-  background-image: none;
-  background-color: transparent; /* Make the menu become transparent */
-  border-radius: 0px;
-  border: 0;
-  box-shadow: none;
-  padding: 10px;
-  position: absolute; /* Make the menu out of the document flow so it can placed anywhere without disturbing other widgets */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10; /* If you delete this line, your menu link won't be clicked because it is behind the background. Applying this code bring the menu in front of the background */
-}
-
-.navbar-default .navbar-brand {
-  font-family: Verdana;
-  color: #ffffff;
-  font-size: 20px;
-}
-
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #ffffff;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: transparent;
-}
-
-.navbar-default .navbar-toggle:hover {
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle:focus {
-  background-color: transparent;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-
-.carousel .background {
-  background-position: center center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 700px;
-}
-
-@media (max-width:991px) {
-  .carousel .background {
-    background-size: cover; /* To make the background image looks good */
-  }
-}
-
-.carousel .background.a {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/92090/pexels-photo-92090-large.jpeg");
-}
-
-.carousel .background.b {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/93750/pexels-photo-93750-large.jpeg");
-}
-
-.carousel .background.c {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://static.pexels.com/photos/76827/bahia-ocean-bay-boat-76827-large.jpeg");
-}
-
-.carousel-fade .carousel-inner .item {
-  opacity: 0;
-  transition: opacity 0.5s; /* The 0.5s describes the duration to make the opacity from 0 to 1 */
-}
-
-.carousel-fade .carousel-inner .active {
-  opacity: 1;
-}
-
-/* CSS Hack to trigger GPU for smooth transition */
-@media all and (transform-3d),
-(-webkit-transform-3d) {
-  .carousel-fade .carousel-inner > .item.next,
-  .carousel-fade .carousel-inner > .item.active.right {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  .carousel-fade .carousel-inner > .item.prev,
-  .carousel-fade .carousel-inner > .item.active.left {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  .carousel-fade .carousel-inner > .item.next.left,
-  .carousel-fade .carousel-inner > .item.prev.right,
-  .carousel-fade .carousel-inner > .item.active {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-/* CSS Hack to trigger GPU for smooth transition */
-
-.covertext {
-  position: absolute; /* To make the div to be place anywhere. It is out of the document flow */
-  top: 200px; /* The distance between the div with the top of document */
-  left: 0px; /* Make the div full width */
-  right: 0px; /* Make the div full width */
-}
-
-.title {
-  font-family: Verdana;
-  font-weight: 600;
-  font-size: 60px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.subtitle {
-  font-family: Verdana;
-  font-size: 23px;
-  color: #ffffff;
-  text-align: center;
-}
-
-.explore {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.explore .btn-lg,
-.explore .btn-lg:hover {
-  border-radius: 30px;
-  padding: 15px 25px;
-  font-size: 22px;
-  background-image: none;
-  background-color: #FF4000;
-  border-color: #FF4000;
-  color: #ffffff;
-}
-
-.btn,
-.btn:hover {
-  border-radius: 0px;
-  background-image: none;
-  background-color: #FF4000;
-  border-color: #FF4000;
-  color: #ffffff;
-  margin-bottom: 20px;
-  box-shadow: none;
-  outline: none;
-}
-
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-  color: #ffffff;
-  outline: none;
-}
-</style>
-
-
-
-
-
-<javascript>
-/* When your mouse cursor enter the background, the fading won't pause and keep playing */ 
-$('.carousel').carousel({
-    pause: "false"
-  /* Change to true to make it paused when your mouse cursor enter the background */
-});
-
-  </javascript>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veniam quisquam, rem illum dicta cumque, voluptate fugiat impedit beatae rerum ratione, voluptates nisi magni delectus ab, eaque atque iste. Molestias incidunt nemo veniam alias nam nisi distinctio optio error architecto odit! Illo dicta nulla fugiat distinctio laudantium, corrupti eum unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veniam quisquam, rem illum dicta cumque, voluptate fugiat impedit beatae rerum ratione, voluptates nisi magni delectus ab, eaque atque iste. Molestias incidunt nemo veniam alias nam nisi distinctio optio error architecto odit! Illo dicta nulla fugiat distinctio laudantium, corrupti eum unde.</p>
+  </div>
+</section>
